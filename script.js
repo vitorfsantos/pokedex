@@ -11,7 +11,16 @@ listaSelecaoPokemon.forEach(pokemon =>{
 
         const idPokemonSelecionado = pokemon.attributes.id.value
 
-        const cartaoPokemonParaAbrir =  document.getElementById('cartao-' + idPokemonSelecionado)
+
+        const idDoPokemonParaAbrir = 'cartao-' + idPokemonSelecionado
+        const cartaoPokemonParaAbrir =  document.getElementById(idDoPokemonParaAbrir)
         cartaoPokemonParaAbrir.classList.add('aberto')
+
+
+        const pokemonAtivoNaListagem = document.querySelector('.ativo')
+        pokemonAtivoNaListagem.classList.remove('ativo')
+
+        const pokemonSelecionadoNaListagem = document.getElementById(idPokemonSelecionado)
+        pokemonSelecionadoNaListagem.classList.add('ativo')
     })
 })
